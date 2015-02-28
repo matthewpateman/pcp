@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>979C7B69-D775-4499-AF0A-8196AD8C8510</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RemoteSpotify</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7328D5D4175C155380B0B6E6C790B65BAD8BA307</key>
+		<string>https://github.com/matthewpateman/pcp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>App/RemoteSpotify.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7328D5D4175C155380B0B6E6C790B65BAD8BA307</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/matthewpateman/pcp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7328D5D4175C155380B0B6E6C790B65BAD8BA307</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7328D5D4175C155380B0B6E6C790B65BAD8BA307</string>
+			<key>IDESourceControlWCCName</key>
+			<string>pcp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
