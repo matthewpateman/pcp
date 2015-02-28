@@ -1,6 +1,5 @@
 #include <RFduinoBLE.h>
 #include "Button.h"
-#include "MultiColorLed.h"
 
 using namespace RemoteSpotify;
 
@@ -15,7 +14,7 @@ void setup() {
   Serial.begin(9600);
 
   // this is the data we want to appear in the advertisement
-  // (the deviceName length plus the advertisement length must be <= 18 bytes
+  // the deviceName length plus the advertisement length must be <= 18 bytes
   RFduinoBLE.advertisementData = "rspotify";
   
   // set the power level to a low value since the distance between the RFduino and iPhone should be minimal
@@ -31,8 +30,6 @@ void setup() {
   RFduino_pinWakeCallback(prevBtn.GetPin(), HIGH, prevBtnPressed);
   RFduino_pinWakeCallback(pauseBtn.GetPin(), HIGH, pauseBtnPressed);
   
-  // turn on red led to indicate no connection
- // led.TurnOn(red);
 }
 
 int nextBtnPressed(uint32_t ulPin)
@@ -42,7 +39,6 @@ int nextBtnPressed(uint32_t ulPin)
   {
     Serial.println("Sending nextBtn signal");
     RFduinoBLE.send(0);
-   // led.BlinkAndRestoreState(300, 0, 1, blue);
     return 1;
   }
   
@@ -56,7 +52,6 @@ int prevBtnPressed(uint32_t ulPin)
   {
     Serial.println("Sending prevBtn signal");
     RFduinoBLE.send(1);
-    //led.BlinkAndRestoreState(300, 0, 1, blue);
     return 1;
   }
   
@@ -70,7 +65,6 @@ int pauseBtnPressed(uint32_t ulPin)
   {
     Serial.println("Sending pauseBtn signal");
     RFduinoBLE.send(2);
-    //led.BlinkAndRestoreState(300, 0, 1, blue);
     return 1;
   }
   
@@ -84,15 +78,20 @@ void loop() {
   Serial.println("Leaving ULPDelay(INFINITE) in delay_until_button");
   
   // clear pin wake when the button is released - this will cause it to enter low power mode the next time through the loop
-  if ((RFduino_pinWoke(nextBtn.GetPin()) && nextBtn.Debounce(LOW)) || (RFduino_pinWoke(prevBtn.GetPin()) && prevBtn.Debounce(LOW)))
+  if ((RFduino_pinWoke(nextBtn.GetPin()) && nextBtn.Debounce(LOW)) 
+   || (RFduino_pinWoke(prevBtn.GetPin()) && prevBtn.Debounce(LOW))
+   || (RFduino_pinWoke(pauseBtn.GetPin()) && pauseBtn.Debounce(LOW)))
   {
       RFduino_resetPinWake(nextBtn.GetPin());
       RFduino_resetPinWake(prevBtn.GetPin());
+      RFduino_resetPinWake(pauseBtn.GetPin());
   }
   
   // if any button has been down for over 3 seconds, shut down
-  if (nextBtn.GetHoldDuration() > 3000 || pauseBtn.GetHoldDuration() > 3000 || prevBtn.GetHoldDuration() > 3000)
+  if (pauseBtn.GetHoldDuration() > 3000)
+  { 
       shutdown();
+  }
 }
 
 void RFduinoBLE_onConnect() {
@@ -106,8 +105,6 @@ void RFduinoBLE_onDisconnect()
 
 void shutdown()
 {
-  // blink the red led to indicate shutdown
-  // led.Blink(200, 200, 5, red);
   
   // this is so that the button release doesn't wake us up again
   delay(3000);
