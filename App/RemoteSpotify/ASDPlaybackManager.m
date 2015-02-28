@@ -102,7 +102,10 @@
     [SPAsyncLoading waitUntilLoaded:playlist timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
         currentPlaylist = playlist;
         playlistTrackQueue = [NSMutableArray arrayWithArray:[playlist items]];
-        [playlistTrackQueue shuffle];
+        
+       // Shuffle Playlist
+       // [playlistTrackQueue shuffle];
+        
         playlistTrackQueueIndex = 0;
         SPPlaylistItem *item = [playlistTrackQueue objectAtIndex:0];
         [self playTrack:[item itemURL]];

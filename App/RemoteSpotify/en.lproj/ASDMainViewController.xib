@@ -49,8 +49,8 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obp-kd-SdQ">
-                    <rect key="frame" x="20" y="276" width="31" height="30"/>
-                    <state key="normal" title="Prev">
+                    <rect key="frame" x="20" y="276" width="35" height="30"/>
+                    <state key="normal" title="Back">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -64,6 +64,15 @@
                     </state>
                     <connections>
                         <action selector="nextClick:" destination="-1" eventType="touchUpInside" id="QtF-dr-SwA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLL-ra-9e8">
+                    <rect key="frame" x="137" y="276" width="50" height="30"/>
+                    <state key="normal" title="Restart">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="restartTrack:" destination="-1" eventType="touchUpInside" id="cB7-Yo-3qy"/>
                     </connections>
                 </button>
             </subviews>

@@ -25,6 +25,7 @@
 - (IBAction)playPauseClick:(id)sender;
 - (IBAction)prevClick:(id)sender;
 - (IBAction)nextClick:(id)sender;
+- (IBAction)restartTrack:(id)sender;
 
 - (void)refreshView;
 

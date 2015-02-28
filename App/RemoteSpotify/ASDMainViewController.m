@@ -144,6 +144,11 @@
     [self.playbackManager updateTrackPosition:self.trackPositionSlider.value];
 }
 
+
+- (IBAction)restartTrack:(id)sender {
+    [self.playbackManager updateTrackPosition:0];
+}
+
 - (IBAction)playPauseClick:(id)sender {
     if ([self.playbackManager isPlaying] == YES) {
         [self.playbackManager pausePlayback];
@@ -152,6 +157,8 @@
         [self.playbackManager resumePlayback];
     }
 }
+
+
 
 - (IBAction)prevClick:(id)sender {
     [self.playbackManager prevTrack];
@@ -178,10 +185,22 @@
         switch (bytes[0])
         {
             case 0:
+                NSLog(@"Received 0");
                 [self.playbackManager nextTrack];
                 break;
             case 1:
+                NSLog(@"Received 1");
                 [self.playbackManager prevTrack];
+                break;
+            case 2:
+                NSLog(@"Received 2");
+                if ([self.playbackManager isPlaying] == YES) {
+                    [self.playbackManager pausePlayback];
+                }
+                else {
+                    [self.playbackManager resumePlayback];
+                }
+
                 break;
         }
     }
