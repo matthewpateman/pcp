@@ -11,7 +11,6 @@ Button pauseBtn(3);
 Button prevBtn(4);
 
 void setup() {
-  Serial.begin(9600);
 
   // this is the data we want to appear in the advertisement
   // the deviceName length plus the advertisement length must be <= 18 bytes
@@ -21,11 +20,9 @@ void setup() {
   RFduinoBLE.txPowerLevel = -20;
   
   // start the BLE stack
-  Serial.println("Starting BLE stack");
   RFduinoBLE.begin();
   
   // setup pinwake callbacks
-  Serial.println("Configuring pinWake callbacks");
   RFduino_pinWakeCallback(nextBtn.GetPin(), HIGH, nextBtnPressed);
   RFduino_pinWakeCallback(prevBtn.GetPin(), HIGH, prevBtnPressed);
   RFduino_pinWakeCallback(pauseBtn.GetPin(), HIGH, pauseBtnPressed);
@@ -34,10 +31,8 @@ void setup() {
 
 int nextBtnPressed(uint32_t ulPin)
 {
-  Serial.println("Entered nextBtn pinwake callback");
   if (nextBtn.Debounce(HIGH))
   {
-    Serial.println("Sending nextBtn signal");
     RFduinoBLE.send(0);
     return 1;
   }
@@ -47,10 +42,8 @@ int nextBtnPressed(uint32_t ulPin)
 
 int prevBtnPressed(uint32_t ulPin)
 {
-  Serial.println("Entered prevBtn pinwake callback");
   if (prevBtn.Debounce(HIGH))
   {
-    Serial.println("Sending prevBtn signal");
     RFduinoBLE.send(1);
     return 1;
   }
@@ -60,10 +53,8 @@ int prevBtnPressed(uint32_t ulPin)
 
 int pauseBtnPressed(uint32_t ulPin)
 {
-  Serial.println("Entered prevBtn pinwake callback");
   if (pauseBtn.Debounce(HIGH))
   {
-    Serial.println("Sending pauseBtn signal");
     RFduinoBLE.send(2);
     return 1;
   }
@@ -72,10 +63,8 @@ int pauseBtnPressed(uint32_t ulPin)
 }
 
 void loop() {
-  Serial.println("Entering ULPDelay(INFINITE) in delay_until_button");
   // switch to lower power mode until a button edge wakes us up
   RFduino_ULPDelay(INFINITE);
-  Serial.println("Leaving ULPDelay(INFINITE) in delay_until_button");
   
   // clear pin wake when the button is released - this will cause it to enter low power mode the next time through the loop
   if ((RFduino_pinWoke(nextBtn.GetPin()) && nextBtn.Debounce(LOW)) 
