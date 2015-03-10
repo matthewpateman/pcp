@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341607EA1AAD1628002AAEE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 341607E91AAD1628002AAEE4 /* Images.xcassets */; };
 		3463C8611A9E82EA00B48C4A /* ASDMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3463C8631A9E82EA00B48C4A /* ASDMainViewController.xib */; };
 		FA1E469918A821CF00B75BD4 /* NSMutableArray_Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1E469818A821CF00B75BD4 /* NSMutableArray_Shuffling.m */; };
 		FA51DD9A18CBB28D00F9FA37 /* ASDPlaybackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA51DD9918CBB28D00F9FA37 /* ASDPlaybackManager.m */; };
@@ -30,7 +31,6 @@
 		FAF9A31118A0A8B400FB81ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF9A30F18A0A8B400FB81ED /* InfoPlist.strings */; };
 		FAF9A31318A0A8B400FB81ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF9A31218A0A8B400FB81ED /* main.m */; };
 		FAF9A31718A0A8B400FB81ED /* ASDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF9A31618A0A8B400FB81ED /* ASDAppDelegate.m */; };
-		FAF9A31918A0A8B400FB81ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF9A31818A0A8B400FB81ED /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		341607E91AAD1628002AAEE4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = rfduino/Images.xcassets; sourceTree = "<group>"; };
 		3463C8621A9E82EA00B48C4A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ASDMainViewController.xib; sourceTree = "<group>"; };
 		FA1E469118A6D26700B75BD4 /* ASDPlaybackManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASDPlaybackManager.h; sourceTree = "<group>"; };
 		FA1E469718A821CF00B75BD4 /* NSMutableArray_Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableArray_Shuffling.h; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		FAF9A31418A0A8B400FB81ED /* RemoteSpotify-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RemoteSpotify-Prefix.pch"; sourceTree = "<group>"; };
 		FAF9A31518A0A8B400FB81ED /* ASDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASDAppDelegate.h; sourceTree = "<group>"; };
 		FAF9A31618A0A8B400FB81ED /* ASDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASDAppDelegate.m; sourceTree = "<group>"; };
-		FAF9A31818A0A8B400FB81ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FAF9A33518A0A92600FB81ED /* CocoaLibSpotify iOS Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify iOS Library.xcodeproj"; path = "cocoalibspotify/iOS Library/CocoaLibSpotify iOS Library.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,11 +194,11 @@
 		FAF9A30C18A0A8B400FB81ED /* RemoteSpotify */ = {
 			isa = PBXGroup;
 			children = (
+				341607E91AAD1628002AAEE4 /* Images.xcassets */,
 				FA819DA218C2FBBB0027FD61 /* rfduino */,
 				FA1E469318A81C1900B75BD4 /* Extensions */,
 				FAF9A31518A0A8B400FB81ED /* ASDAppDelegate.h */,
 				FAF9A31618A0A8B400FB81ED /* ASDAppDelegate.m */,
-				FAF9A31818A0A8B400FB81ED /* Images.xcassets */,
 				FAF9A30D18A0A8B400FB81ED /* Supporting Files */,
 				FAE2B18618A1F02B0098A631 /* ASDMainViewController.h */,
 				FAE2B18718A1F02B0098A631 /* ASDMainViewController.m */,
@@ -307,9 +307,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE2B18518A1EF6E0098A631 /* SPLoginResources.bundle in Resources */,
+				341607EA1AAD1628002AAEE4 /* Images.xcassets in Resources */,
 				FAF9A31118A0A8B400FB81ED /* InfoPlist.strings in Resources */,
 				3463C8611A9E82EA00B48C4A /* ASDMainViewController.xib in Resources */,
-				FAF9A31918A0A8B400FB81ED /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
